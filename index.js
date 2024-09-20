@@ -122,6 +122,11 @@ function createVisualRow() {
 
     /** @type {HTMLElement} */
     const node = template.content.firstElementChild.cloneNode(true)
+    var box = node.querySelector('.box')
+    for (let i = 0; i < N; i++) {
+        node.appendChild(box.cloneNode())
+    }
+    box.remove()
     return node
 }
 
