@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0eef0;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+}
+
+main {
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+main .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.expression {
+    display: none;
+    min-height: 50px;
+    opacity: 0;
+    margin-bottom: 10px;
+}
+
+.expression input {
+    width: 50px;
+}
+
+.expression input.error {
+    color: red;
+}
+
+.expression .result {
+    width: 50px;
+}
+
+.expression.visible {
+    display: block;
+    animation: fadeIn 500ms ease forwards;
+}
+
+.panel {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.visual-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.visual-row .box {
+    width: 50px;
+    height: 50px;
+    background-color: #8fed92;
+    animation: slideIn 500ms ease forwards;
+}
+
+#done-btn {
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+#done-btn:disabled {
+    background-color: #A9A9A9;
+}
+
+#done-btn:hover {
+    background-color: #AFEEEE;
+}
+
+#done-btn.right {
+    background-color: #228B22;
+}
+
+#done-btn.wrong {
+    background-color: #FA8072;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
